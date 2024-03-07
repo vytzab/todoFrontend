@@ -5,7 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
 import { ListTodosComponent } from './list-todos/list-todos.component';
 import { LogoutComponent } from './logout/logout.component';
-import { authGuardGuard } from './auth-guard.guard';
+import { authGuardGuard } from './guards/auth-guard.guard';
+import { TodoComponent } from './todo/todo.component';
 
 // welcome 
 export const routes: Routes = [
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'welcome/:name', component: WelcomeComponent, canMatch:[authGuardGuard]},
   { path: 'todos', component: ListTodosComponent, canMatch:[authGuardGuard] },
   { path: 'logout', component: LogoutComponent, canMatch:[authGuardGuard] },
+  { path: 'todos/:id', component: TodoComponent, canMatch:[authGuardGuard] },
 
   { path: '**', component: ErrorComponent }
 ];
